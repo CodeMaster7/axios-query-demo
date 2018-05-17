@@ -8,12 +8,12 @@ export default class Form extends React.Component {
             type: undefined,
             planetName: '',
             personName: '',
-            personEyeColor: null,
-            gender: null,
+            personEyeColor: undefined,
+            gender: undefined,
             shipName: '',
-            shipClass: null,
+            shipClass: undefined,
             result: [],
-            url: null
+            url: undefined
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -82,45 +82,42 @@ export default class Form extends React.Component {
         let searchTerms;
         switch (this.state.type) {
             case ('planet'): searchTerms = (
-                <div>
+                <div className='search-grid'>
                     <label htmlFor='planetName'>Name: </label>
                     <input value={this.state.planetName} onChange={this.handleChange} id='planetName' type='text' placeholder='your search . . . ' />
                 </div>
             ); break;
 
             case ('person'): searchTerms = (
-                <div>
+                <div className='search-grid'>
                     <label htmlFor='personName'>Name: </label>
                     <input value={this.state.personName} onChange={this.handleChange} id='personName' type='text' placeholder='your search . . . ' />
-                    <br />
                     <label htmlFor='personEyeColor'>Eye Color: </label>
                     <input value={this.state.personEyeColor} onChange={this.handleChange} id='personEyeColor' type='text' placeholder='your search . . . ' />
-                    <br />
                     <label htmlFor='gender'>Gender: </label>
                     <select onChange={this.handleChange} id='gender' type='text' placeholder='your search . . . ' >
-                        <option value=''>Any</option>
-                        <option value='male'>Male</option>
-                        <option value='female'>Female</option>
+                        <option className='tr' value=''>Any</option>
+                        <option className='tr' value='male'>Male</option>
+                        <option className='tr' value='female'>Female</option>
                     </select>
                 </div>
             ); break;
 
             case ('ship'): searchTerms = (
-                <div>
+                <div className='search-grid'>
                     <label htmlFor='shipName'>Name: </label>
                     <input value={this.state.shipName} onChange={this.handleChange} id='shipName' type='text' placeholder='your search . . . ' />
-                    <br />
                     <label htmlFor='shipClass'>Class: </label>
                     <select onChange={this.handleChange} id='shipClass' type='text' placeholder='your search . . . ' >
-                        <option value=''>All</option>
-                        <option value='landing craft'>Landing Craft</option>
-                        <option value='Deep Space Mobile Battlestation'>Deep Space Mobile Battlestation</option>
-                        <option value='Light freighter'>Light Freighter</option>
-                        <option value='assault starfighter'>Assault Starfighter</option>
-                        <option value='Starfighter'>Starfighter</option>
-                        <option value='Patrol craft'>Patrol Craft</option>
-                        <option value='Armed government transport'>Armed Government Transport</option>
-                        <option value='Escort ship'>Escort Ship</option>
+                        <option className='tr' value=''>All</option>
+                        <option className='tr' value='landing craft'>Landing Craft</option>
+                        <option className='tr' value='Deep Space Mobile Battlestation'>Deep Space Mobile Battlestation</option>
+                        <option className='tr' value='Light freighter'>Light Freighter</option>
+                        <option className='tr' value='assault starfighter'>Assault Starfighter</option>
+                        <option className='tr' value='Starfighter'>Starfighter</option>
+                        <option className='tr' value='Patrol craft'>Patrol Craft</option>
+                        <option className='tr' value='Armed government transport'>Armed Government Transport</option>
+                        <option className='tr' value='Escort ship'>Escort Ship</option>
                     </select>
                 </div>
             ); break;
@@ -131,16 +128,21 @@ export default class Form extends React.Component {
             <div id='form'>
                 <h1>search</h1>
                 <form>
-                    <label htmlFor='type'>Search Type: </label>
-                    <select onChange={e => this.setState({ type: e.target.value })} id='type' name='' form=''>
-                        <option value='planet'>Planet</option>
-                        <option value='person'>Person</option>
-                        <option value='ship'>Ship</option>
-                    </select>
+                    <div className='search-grid'>
+                        <label htmlFor='type'>Search Type: </label>
+                        <span className='styled-select'>
+                            <select onChange={e => this.setState({ type: e.target.value })} id='type' name='' form=''>
+                                <option className='tr' value='planet'>Planet</option>
+                                <option className='tr' value='person'>Person</option>
+                                <option className='tr' value='ship'>Ship</option>
+                            </select>
+                        </span>
+                    </div>
                     <br />
                     {searchTerms}
                     <br />
-                    <button type='submit' onClick={this.handleSubmit}>search !</button><span>{this.state.url}</span>
+                    <div className='search-grid'>
+                        <button type='submit' onClick={this.handleSubmit}>search !</button><span>{this.state.url}</span></div>
                 </form>
                 <hr />
                 <div>Results . . . </div>

@@ -5,9 +5,6 @@ let data = {};
 
 const app = express();
 
-
-
-
 app.use(bodyParser.json());
 
 const port = 4000;

@@ -67,6 +67,11 @@ table {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; }
 
+.search-grid {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  justify-items: start; }
+
 * {
   box-sizing: border-box;
   font-family: "Josefin Sans", sans-serif; }
@@ -96,8 +101,27 @@ input:focus {
   outline: none; }
 
 input {
-  padding: .6em 1em;
-  background-color: #f0eff4; }
+  padding: .6em 0.3em;
+  background-color: transparent;
+  border: none;
+  width: 268px;
+  color: #f0eff4;
+  border-bottom: 1px solid #f0eff4; }
 
-select:focus {
+select:active {
   outline: none; }
+
+select {
+  background: transparent;
+  outline: none;
+  border: none;
+  width: 268px;
+  padding: .5em 0;
+  color: #f0eff4;
+  border-bottom: 1px solid #f0eff4; }
+  select option {
+    background-color: transparent; }
+
+.tr {
+  background-color: #291528;
+  border: none; }
