@@ -18,7 +18,10 @@ axios
 // get person data
 axios
     .get('http://swapi.co/api/people')
-    .then(res => data.people = res.data.results)
+    .then(res => {
+        console.log('got people!')
+        data.people = res.data.results
+    })
 
 //get planet data
 axios
@@ -57,12 +60,28 @@ app.get('/api/starships', (req, res, next) => {
 }, (req, res) => {
     res.send(data.starships)
 })
+//
+app.delete('/api/:type/:name', function (req, res) {
+    // delete person from data.people, with matching name
+    // req.params.name /api/starships/death star
+
+
+    console.log('delete endpoints, params: ', req.params)
+    let index = data.people.findIndex((person) => person.name.toLowerCase().includes(req.params.name.toLowerCase()))
+    if (index >= 0) {
+        // delete that index from data.people
+        console.log('deleteing ', data.people[index].name);
+        data.people.splice(index, 1);
+        return res.status(200).send(data.people.map(person => person.name))
+    }
+    res.status(500).send({ error: 'name not found in database' })
+})
 //search page endpoint, with queries!
 // client will supply type (planet, person, starship) and a name param. 
 // endpoint  app.get(/api/search?type='thing'&name='luke');
 // format /api/:[type]?[query param]=[query value]&[other query param]=[other query value]
 app.get('/api/:type', (req, res) => {
-    console.log('req.query: ', req.query)
+    console.log('req.query: ', req.query)  // req.params, req.query
     const { query } = req
     switch (req.params.type) {
         case 'planet':
