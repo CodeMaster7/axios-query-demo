@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import "reset";
+@import "variables";
+@import "mixins";
+
+@import "landing/landing";
+@import "app/app";
+@import "mainComponent/main-component";
+@import "form/form";
+
+
+*{
+    box-sizing: border-box;
+    font-family: $main-font;
+}
+a{
+    color:$theme2;
+}
+a:hover{
+    color:$theme1;
+}
+button{
+    background-color:$theme3;
+    color:$theme4;
+    border:none;
+    padding:0 1em;
+    height:32px;
+    font-weight:bold;
+    // border-radius:5%;
+}
+button:hover{
+    color:#fff;
+    background-color:$theme5;
+}
+button:focus{
+    outline:none;
+}
+input:focus{
+    outline:none;
+}
+input{
+    padding:.6em 1em;
+    background-color:$theme4;
+}
+select:focus{
+    outline:none;
+}
+
+// neat SASS stuff
+/////////////////////
+// variables - $var
+// Nesting 
+// Partials _partial.scss  @import "partial"
+// Mixins
+    // @mixin border-radius($radius) {
+    //     -webkit-border-radius: $radius;
+    //     -moz-border-radius: $radius;
+    //     -ms-border-radius: $radius;
+    //     border-radius: $radius;
+    // }
+
+    // .box { @include border-radius(10px); }
+// extending placeholder classes
+    // %message-shared{
+    //     border: 1px solid #ccc;
+    //     padding: 10px;
+    //     color: #333;
+    // }
+
+    // .message { 
+    //     @extend %message-shared;
+    // }
+
+    // .success {
+    //     @extend %message-shared;
+    //     border-color: green;
+    // }

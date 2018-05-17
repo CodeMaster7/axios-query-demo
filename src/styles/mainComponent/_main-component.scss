@@ -1,0 +1,13 @@
+#main-component{
+    @extend %component;
+    .text{
+        padding:2em;
+        font-size:18px;
+    }
+    .search-container{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        // grid-gap:1em;
+    }
+}
+

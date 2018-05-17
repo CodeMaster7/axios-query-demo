@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+#landing, #main-component, #form {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #291528;
+  font-size: 24px;
+  color: #f0eff4;
+  min-height: 100vh;
+  padding: 0 10vw; }
+  #landing h1, #main-component h1, #form h1 {
+    font-size: 200px; }
+
+#nav {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #f0eff4;
+  padding: 1em; }
+  #nav span {
+    margin-right: 2em; }
+
+#main-component .text {
+  padding: 2em;
+  font-size: 18px; }
+
+#main-component .search-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+
+* {
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif; }
+
+a {
+  color: #291528; }
+
+a:hover {
+  color: #000000; }
+
+button {
+  background-color: #3a3e3b;
+  color: #f0eff4;
+  border: none;
+  padding: 0 1em;
+  height: 32px;
+  font-weight: bold; }
+
+button:hover {
+  color: #fff;
+  background-color: #9e829c; }
+
+button:focus {
+  outline: none; }
+
+input:focus {
+  outline: none; }
+
+input {
+  padding: .6em 1em;
+  background-color: #f0eff4; }
+
+select:focus {
+  outline: none; }
